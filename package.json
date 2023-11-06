@@ -1,0 +1,16 @@
+{
+  "name": "doings-nodejs",
+  "version": "1.0.0",
+  "description": "This is my nodejs application",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --recursive --timeout 60000 --exit",
+    "start": "node server.js"
+  },
+  "author": "doings admin@doings.com",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mocha": "^10.2.0"
+  }
+}
