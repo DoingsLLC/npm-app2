@@ -9,7 +9,7 @@ pipeline {
         ACR_NAME = "doingsacr"
         registryUrl = "doingsacr.azurecr.io"
         IMAGE_NAME = "doings/nodejs-app"
-        IMAGE_TAG = "v1"
+        IMAGE_TAG = "${buildNumber}"
         registryCredential = "doingsacr-credential" // Make sure this references the correct credential ID
     }
 
