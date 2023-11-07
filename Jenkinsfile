@@ -9,7 +9,7 @@ pipeline {
         ACR_NAME = "doingsacr"
         registryUrl = "doingsacr.azurecr.io"
         IMAGE_NAME = "doings/nodejs-app"
-        IMAGE_TAG = "buildNumber"
+        IMAGE_TAG = "${BUILD_NUMBER}" // Use the Jenkins build number as the image tag
         registryCredential = "doingsacr-credential" // Make sure this references the correct credential ID
     }
 
@@ -44,7 +44,7 @@ pipeline {
                 script {
                     docker.withRegistry("http://${ACR_NAME}.azurecr.io", registryCredential) {
                         def dockerImage = docker.image("${ACR_NAME}.azurecr.io/${IMAGE_NAME}:${IMAGE_TAG}")
-                        dockerImage.push() // Uncomment this line to push the image
+                        dockerImage.push()
                     }
                 }
             }
