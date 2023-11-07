@@ -9,7 +9,7 @@ pipeline {
         ACR_NAME = "doingsacr"
         registryUrl = "doingsacr.azurecr.io"
         IMAGE_NAME = "doings/nodejs-app"
-        IMAGE_TAG = "V 1.${BUILD_NUMBER}" // Use the Jenkins build number as the image tag
+        IMAGE_TAG = "V-1.${BUILD_NUMBER}" // Use the Jenkins build number as the image tag
         registryCredential = "doingsacr-credential" // Make sure this references the correct credential ID
     }
 
